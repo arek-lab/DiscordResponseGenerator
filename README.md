@@ -17,6 +17,9 @@ START
                       ├─ generate_response   # Direct LLM reply
                       └─ process_rag ──► reputation_response  # RAG-augmented reply
 ```
+<p align="center">
+  <img src="graph.png" alt="graph" width="400">
+</p>
 
 Each node can short-circuit to `END`, so irrelevant or out-of-scope messages are dropped early without wasting tokens.
 
@@ -51,7 +54,7 @@ app/
 
 ```bash
 python main_ui.py        # Gradio web UI
-python main_terminal.py  # terminal mode
+python main_terminal.py  # terminal mode — set the source .txt file path directly in the script
 ```
 
 Output files are saved to the project root directory.
