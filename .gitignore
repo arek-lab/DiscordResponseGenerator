@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.env
+not_used/
+chroma_db/
+11_02_2026_pickle/
+11_02_2026_raw/
+cleaned/
+test.py
+test_list.py
+*.txt
+*.json

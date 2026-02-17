@@ -1,0 +1,14 @@
+OPENAI_API_KEY=sk-proj....
+ANTHROPIC_API_KEY=sk-ant...
+TAVILY_API_KEY=tvly-dev...
+
+GPT_MODEL=gpt-4o-mini
+ANTHROPIC_MODEL=claude-sonnet-4-5-20250929
+
+
+// for tracing only
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+export LANGSMITH_API_KEY=....
+export LANGSMITH_PROJECT=<<project_name>>
+
