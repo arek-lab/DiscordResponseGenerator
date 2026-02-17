@@ -2,7 +2,12 @@
 
 An LLM-powered pipeline that automatically generates contextual replies to Discord posts. Built with LangGraph, it routes each message through a multi-stage classification flow before deciding whether and how to respond.
 
+## Samples
+
+Sample responses available in json file.
+
 ## How It Works
+
 
 Incoming messages first pass through a **regex-based pre-filter** that strips noise and spam before any LLM call is made.
 
@@ -17,6 +22,7 @@ START
                       ├─ generate_response   # Direct LLM reply
                       └─ process_rag ──► reputation_response  # RAG-augmented reply
 ```
+
 <p align="center">
   <img src="graph.png" alt="graph" width="400">
 </p>

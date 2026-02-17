@@ -1,0 +1,104 @@
+[
+  {
+    "original_message": {
+      "username": "anonimized",
+      "timestamp": "13:45",
+      "message": "Hey! 👋 I have a question about transferring a complete Lovable project between accounts.\nI built a website for a client using my Lovable account, and I also used the Supabase database created via Lovable Cloud (the Supabase project Lovable provisions for you).\nWhat I need is for the client to have full ownership/control from now on:\nthe Lovable project (code / settings / deployment)\nand the Supabase database as well (ownership, access, keys, etc.)\nI’ve been looking around and can’t find a clear flow to:\nTransfer / hand off the Lovable project to another Lovable account (if that exists).\nTransfer the Supabase side (if Lovable creates the Supabase project under an org/account that can’t be moved, or if there’s an official process to reassign it to the client).\nIf it’s not possible to “transfer”, what’s the recommended approach (duplicate project + export/import DB + update env vars + redeploy, etc.)\nHas anyone done this and can share exact steps, or point me to official docs?\nThanks!",
+      "has_images": false,
+      "is_forwarded": false,
+      "role": "",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.55
+    },
+    "message": "Hey! 👋 I have a question about transferring a complete Lovable project between accounts.\nI built a website for a client using my Lovable account, and I also used the Supabase database created via Lovable Cloud (the Supabase project Lovable provisions for you).\nWhat I need is for the client to have full ownership/control from now on:\nthe Lovable project (code / settings / deployment)\nand the Supabase database as well (ownership, access, keys, etc.)\nI’ve been looking around and can’t find a clear flow to:\nTransfer / hand off the Lovable project to another Lovable account (if that exists).\nTransfer the Supabase side (if Lovable creates the Supabase project under an org/account that can’t be moved, or if there’s an official process to reassign it to the client).\nIf it’s not possible to “transfer”, what’s the recommended approach (duplicate project + export/import DB + update env vars + redeploy, etc.)\nHas anyone done this and can share exact steps, or point me to official docs?\nThanks!",
+    "user": null,
+    "is_lead": true,
+    "reply": "The tricky part is Supabase ownership — if Lovable provisioned it under your account, you'll likely need to pg_dump/restore into a fresh Supabase project the client controls, then update connection strings and redeploy, because Supabase project ownership can't usually transfer between orgs. Happy to help troubleshoot any steps in DMs!"
+  },
+  {
+    "original_message": {
+      "username": "anonimized",
+      "timestamp": "16:51",
+      "message": "how to change the Supabase from loveable to my supabase",
+      "has_images": false,
+      "is_forwarded": false,
+      "role": "",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.45
+    },
+    "message": "how to change the Supabase from loveable to my supabase",
+    "user": null,
+    "is_lead": true,
+    "reply": "Transitioning from Loveable to your Supabase could be a great move. The tricky part is usually whether to migrate existing data or start fresh — if you have production data in Loveable's instance, you'll need pg_dump/restore or the Supabase CLI migration tools, plus careful handling of auth users and RLS policies that won't transfer automatically. Happy to chat in DMs if you need help sorting this out! 🙂"
+  },
+  {
+    "original_message": {
+      "username": "anonimized",
+      "timestamp": "11:08",
+      "message": "i have an issue with code syncing with github repo, where to ask this?",
+      "has_images": false,
+      "is_forwarded": false,
+      "datetime": "2026-02-15T11:08:00",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.55
+    },
+    "message": "i have an issue with code syncing with github repo, where to ask this?",
+    "user": null,
+    "is_lead": false,
+    "reply": "Hey! It sounds like you're experiencing a tricky issue. Lovable docs don't cover this — configuration happens directly in Supabase. If you want to dive deeper into it, DMs are open for a chat! 👋"
+  },
+  {
+    "original_message": {
+      "username": "anonimized",
+      "timestamp": "09:45",
+      "message": "Any devs that have a service checking if your project is operating properly & can offer solutions if needed? 🙂",
+      "has_images": false,
+      "is_forwarded": false,
+      "datetime": "2026-02-15T09:45:00",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.2
+    },
+    "message": "Any devs that have a service checking if your project is operating properly & can offer solutions if needed? 🙂",
+    "user": null,
+    "is_lead": true,
+    "reply": "Most monitoring setups catch failures after users notice them — the real value is in proactive health checks that catch resource exhaustion, connection pool saturation, or silent data pipeline stalls before they cascade. Happy to chat about options in DMs! 🙂"
+  },
+  {
+    "original_message": {
+      "username": "anonimized",
+      "timestamp": "10:29",
+      "message": "“Lovable user who claimed it becomes the shopify store owner” I have a question regarding the shopify integration. I have a company and I will build the storefront in lovable from the company account and when I want to “Claim store” I will select the client shopify account, and that’s should be ok, right? The client should have access only in shopify and nothing related to lovable. Eventually the project will live on Vercel. Anyone who built stores with lovable - shopify please dm me if you know more detalis.",
+      "has_images": false,
+      "is_forwarded": false,
+      "datetime": "2026-02-15T10:29:00",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.45
+    },
+    "message": "“Lovable user who claimed it becomes the shopify store owner” I have a question regarding the shopify integration. I have a company and I will build the storefront in lovable from the company account and when I want to “Claim store” I will select the client shopify account, and that’s should be ok, right? The client should have access only in shopify and nothing related to lovable. Eventually the project will live on Vercel. Anyone who built stores with lovable - shopify please dm me if you know more detalis.",
+    "user": null,
+    "is_lead": true,
+    "reply": "The tricky part is the handoff — once you deploy to Vercel under your own account, the client loses the ability to make changes through Lovable unless you give them project access, which breaks your isolation model. Happy to discuss this further in DMs if you have more questions! 😊"
+  },
+  {
+    "original_message": {
+      "username": "aph",
+      "timestamp": "12:48",
+      "message": "Hello. Has anyone managed to implement realtime text-to-speech where the spoken audio (e.g. using the ElevenLabs API) is synchronized with highlighted text on the user interface as it is being read? I’m having trouble getting the audio and text to stay in sync. I need a few pointers.",
+      "has_images": false,
+      "is_forwarded": false,
+      "role": "",
+      "skip": false,
+      "auto_reject_reason": null,
+      "needs_help_score": 0.55
+    },
+    "message": "Hello. Has anyone managed to implement realtime text-to-speech where the spoken audio (e.g. using the ElevenLabs API) is synchronized with highlighted text on the user interface as it is being read? I’m having trouble getting the audio and text to stay in sync. I need a few pointers.",
+    "user": null,
+    "is_lead": false,
+    "reply": "Hey there! It sounds like you're really diving deep into this. Just a heads up: lovable docs don't cover this — configuration happens directly in Supabase. DMs open if you want to discuss 👋"
+  }
+]

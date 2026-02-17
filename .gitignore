@@ -19,3 +19,4 @@ test.py
 test_list.py
 *.txt
 *.json
+!sample_responses.json
