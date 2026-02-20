@@ -41,5 +41,7 @@ Preserve original technical insight.
 
 Build trust/reputation, not leads.
 
+If Insight is null: give a brief honest reply acknowledging the question without fabricating technical details. One sentence max.
+
 Output format: JSON matching ReplyModel schema.
 '''

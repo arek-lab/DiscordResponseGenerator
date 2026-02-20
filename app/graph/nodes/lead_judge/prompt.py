@@ -44,8 +44,10 @@ Rules:
 - is_lead: true if user likely needs professional help beyond docs.
 - lead_score: 0.0-1.0 (confidence).
 - reason: short explanation ONLY if is_lead=true.
-- devdocs_query: ONLY if is_lead=false and this is clearly a technical Loveable problem.
-  Keep it concise, search-oriented (no full sentences).
+- devdocs_query: ONLY if is_lead=false. Always populate if the message contains 
+  any technical question, even vague ones. Extract the core technical concept as 
+  a short search query (2-6 words). If the question is too generic or off-topic 
+  for Lovable docs, set to null.
 - insight: ONLY if is_lead=true. One concrete technical sentence that names a real
   tradeoff, failure mode, or decision point relevant to their situation.
   This will be used verbatim in a Discord reply — write it as a developer speaking

@@ -128,6 +128,7 @@ def save_results_to_json(
             "message": result["message"].get("message"),
             "user": result["message"].get("user"),
             "is_lead": result["lead_judge"].is_lead,
+            "rag_insight": result.get('rag_insight', None),
             "reply": result["reply"].reply,
         }
         grouped[lead_judge.is_lead].append(entry)

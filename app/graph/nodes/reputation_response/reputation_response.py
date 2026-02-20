@@ -12,7 +12,7 @@ async def reputation_response(state: State) -> State:
     domain = state["domain"]
     intent = state["intent"]
     lead_score = state["lead_judge"].lead_score
-    insight = state["rag_insight"]
+    insight = state["rag_insight"] or None
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", GENERATE_REPUTATION_REPLY),

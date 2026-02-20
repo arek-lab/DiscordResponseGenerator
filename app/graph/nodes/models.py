@@ -15,7 +15,9 @@ class LeadJudgeModel(BaseModel):
     is_lead: bool
     lead_score: float
     reason: str | None
-    devdocs_query: str | None = Field(description="populated only when is_lead=False")
+    devdocs_query: str | None = Field(description="Short search query (2-6 words) for Lovable docs. "
+        "Populate whenever is_lead=False and the message contains a technical question. "
+        "Leave null only for completely off-topic or non-technical messages.")
     insight: str | None = Field(description="populated only when is_lead=True")
 
 class ReplyModel(BaseModel):

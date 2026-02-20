@@ -7,7 +7,7 @@ from config import get_openai
 from app.graph.nodes.process_rag.prompt import INSIGHT_PROMPT
 
 r = Retriever(
-    score_threshold=2.0,
+    score_threshold=None,
     final_k=3,)
 llm = get_openai()
 
@@ -16,7 +16,7 @@ async def process_rag(state: State) -> State:
     query = state["lead_judge"].devdocs_query
     if not query:
         return {
-            "rag_insight": "No query provided for RAG process."
+            "rag_insight": None
         }
     context = r.search(query)
     prompt = ChatPromptTemplate.from_messages(
@@ -36,5 +36,5 @@ async def process_rag(state: State) -> State:
         }
     except:
         return {
-            "rag_insight": "RAG inference error"
+            "rag_insight": None
         }

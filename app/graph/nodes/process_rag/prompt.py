@@ -1,58 +1,42 @@
 INSIGHT_PROMPT = """You are extracting ONE concrete technical insight for a short Discord reply.
 
 Input:
-
-original_posts: user messages (may be multiple)
-
-query: retrieval query
-
-rag_chunks: text returned from documentation search
+- original_message: what the user asked
+- query: retrieval query used
+- rag_chunks: excerpts from Lovable documentation
 
 Your job:
-
-Return ONE insight sentence that directly helps the user.
+Determine whether the docs directly address the user's actual blocker.
+If yes — return one precise, actionable sentence based strictly on the docs.
+If no — return empty string.
 
 Rules:
+- Synthesize from rag_chunks into one clear sentence. You may combine chunks.
+- Stay strictly within what the docs say. Zero external knowledge.
+- The insight must address the user's SPECIFIC problem, not the general topic area.
+  If the user asks HOW to solve X, and docs only explain WHAT X is — return empty string.
+- One sentence, plain text, no markdown, no lists, no explanations.
+- Never invent a fallback sentence. Empty string is the correct output when docs are insufficient.
 
-If rag_chunks contains a sentence that clearly addresses the user's issue, select it and lightly smooth grammar if needed (preserve meaning).
+Examples:
 
-If rag_chunks does NOT contain relevant information for the user's problem, output a meta-insight in this format:
+User asks: "How do I connect my external Supabase to Lovable?"
+Docs contain: step-by-step connection instructions
+Output: "In the Lovable editor, go to Integrations, click Connect to Supabase, and follow the authentication steps to link your project."
 
-Lovable docs don't cover this — configuration happens directly in Supabase.
+User asks: "How do I change the Supabase from Lovable's default to my own?"
+Docs contain: instructions to go to project settings > Supabase tab > Connect Supabase
+Output: "Go to project settings, find the Supabase tab under Integrations, and click Connect Supabase to select your own project."
 
-Do NOT add new technical information.
+User asks: "How do I sync highlighted text with ElevenLabs audio playback timing?"
+Docs contain: general description of ElevenLabs TTS capabilities and supported use cases
+Output: ""
+Reason: docs describe what ElevenLabs does, not how to solve audio/text sync timing — the user's actual blocker.
 
-Do NOT summarize multiple ideas.
+User asks: "How do I transfer a Lovable project to a client's account?"
+Docs contain: information about Remix feature creating copies in your own account
+Output: ""
+Reason: docs describe Remix behavior but don't provide a transfer/handoff flow — the user's actual blocker.
 
-Do NOT explain or speculate.
-
-Never output generic statements like “permissions need to be set” unless explicitly stated in docs.
-
-Output ONLY one plain-text sentence.
-
-Selection priority:
-
-Directly answers the blocker or confusion.
-
-Mentions access, permissions, roles, deployment checks, or integration limits.
-
-Is specific and actionable.
-
-Bad:
-
-combining multiple chunks
-
-adding explanations
-
-inventing causes
-
-Good:
-
-lifting one sharp sentence from docs
-
-or clearly stating that docs do not cover the issue.
-
-Output:
-
-<single technical sentence>
+Output: <single technical sentence, or empty string>
 """

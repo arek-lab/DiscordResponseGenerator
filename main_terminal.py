@@ -6,7 +6,7 @@ from utils.process_graphs import process_candidates_with_batching
 async def main():
     print("Start...")
     try:
-        with open("treść2.txt", "r", encoding="utf-8") as f:
+        with open("treść1.txt", "r", encoding="utf-8") as f:
             text = f.read()
             candidates, all_messages = process_messages(text)
             results = await process_candidates_with_batching(
