@@ -169,6 +169,7 @@ class Retriever:
         pairs = [(query, doc.page_content) for doc in candidates]
         scores = self.reranker.predict(pairs)
 
+
         ranked = sorted(
             zip(scores, candidates),
             key=lambda x: x[0],

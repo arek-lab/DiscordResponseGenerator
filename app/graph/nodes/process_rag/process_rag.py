@@ -7,7 +7,7 @@ from config import get_openai
 from app.graph.nodes.process_rag.prompt import INSIGHT_PROMPT
 
 r = Retriever(
-    score_threshold=None,
+    score_threshold=0.5,
     final_k=3,)
 llm = get_openai()
 
