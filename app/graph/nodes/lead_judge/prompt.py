@@ -31,6 +31,7 @@ NOT a lead:
 - simple how-to questions
 - basic feature usage
 - isolated coding errors
+- roadmap/feature requests directed at a specific person (@mention) or asking about product plans
 
 Implicit lead signals — treat these as leads even without explicit "hire me":
 - user mentions a business system type (CRM, ERP, SaaS, marketplace) alongside a scaling or reliability concern

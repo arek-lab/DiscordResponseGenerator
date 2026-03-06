@@ -2,13 +2,13 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 from app.graph.state import State
-from app.graph.nodes.process_rag.retriever import Retriever
+from app.graph.nodes.process_rag.retriever_openai_embed import Retriever
 from config import get_openai
 from app.graph.nodes.process_rag.prompt import INSIGHT_PROMPT
 
 r = Retriever(
-    score_threshold=0.5,
-    final_k=3,)
+    score_threshold=0.3,
+    final_k=5,)
 llm = get_openai()
 
 

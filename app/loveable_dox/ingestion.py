@@ -14,7 +14,7 @@ from langchain_tavily import TavilyCrawl
 from pathlib import Path
 from langchain_huggingface import HuggingFaceEmbeddings
 from app.loveable_dox.clean_docs import clean_docs_folder
-from app.loveable_dox.index_docs import run
+from app.loveable_dox.index_docs_chroma import run
 
 
 load_dotenv()
